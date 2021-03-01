@@ -16,10 +16,6 @@
 # Inherit from msm8917-common
 $(call inherit-product, device/samsung/msm8917-common/msm8917.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
 # Camera
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/B13QL_s5k3l6xx_module_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/B13QL_s5k3l6xx_module_info.xml \
@@ -28,7 +24,8 @@ PRODUCT_COPY_FILES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/samsung/j4primelte
+    device/samsung/j4primelte \
+    packages/apps/Bluetooth
 
 # Inherit vendor
 $(call inherit-product, vendor/samsung/j4primelte/j4primelte-vendor.mk)
